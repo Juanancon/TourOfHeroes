@@ -7,12 +7,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HeroDetailComponent } from '../components/hero-detail/hero-detail';
+import {HeroService} from "./heroservice";
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    HeroDetailComponent
+    HeroDetailComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,9 @@ import { HeroDetailComponent } from '../components/hero-detail/hero-detail';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HeroService
+
   ]
 })
 export class AppModule {}
